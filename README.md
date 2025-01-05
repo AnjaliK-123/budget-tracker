@@ -13,7 +13,8 @@ A web application that helps users manage their finances by tracking income and 
 
 ## Technologies Used
 
-- **Frontend**: 
+- **Frontend**:
+
   - React
   - React Router
   - Axios for API calls
@@ -35,11 +36,13 @@ A web application that helps users manage their finances by tracking income and 
 ### Installation
 
 1. Clone the repository:
+
    ```bash
-   git clone https://github.com/yourusername/budget-tracker.git
+   git clone https://github.com/AnjaliK-123/budget-tracker.git
    ```
 
 2. Navigate to the project directory:
+
    ```bash
    cd budget-tracker
    ```
@@ -47,16 +50,19 @@ A web application that helps users manage their finances by tracking income and 
 3. Set up the backend:
 
    - Navigate to the backend directory:
+
      ```bash
      cd backend
      ```
 
    - Install dependencies:
+
      ```bash
      npm install
      ```
 
    - Create a `.env` file in the backend directory and add your MongoDB connection string:
+
      ```
      MONGODB_URI=your_mongodb_connection_string
      ```
@@ -69,11 +75,13 @@ A web application that helps users manage their finances by tracking income and 
 4. Set up the frontend:
 
    - Navigate to the frontend directory:
+
      ```bash
      cd ../frontend
      ```
 
    - Install dependencies:
+
      ```bash
      npm install
      ```
@@ -100,9 +108,3 @@ A web application that helps users manage their finances by tracking income and 
 ### License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-### Contact
-
-Your Name - [@yourusername](https://twitter.com/yourusername)
-
-Project Link: [https://github.com/yourusername/budget-tracker](https://github.com/yourusername/budget-tracker)
