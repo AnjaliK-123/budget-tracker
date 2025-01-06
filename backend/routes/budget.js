@@ -41,11 +41,25 @@ rotuer.post('/', authenticateToken, async (req, res) => {
         description
     });
     // save entry
-    await enwEntry.save();
+    await newEntry.save();
     // send response with new entry
     res.status(201).json(newEntry);
 }
     );
 // Get Budget Entries
+router.get('/', authenticateToken, async (req, res) => {
+    // retirieves all budegt entries for authenticated user
+    const entries = await budget.find({ userId: req.user.id });
+    // send respense in json format
+    res.json(entries);
+});
 // Delete Budget Entry
+rotuer.delete('/:id', authenticateToken, async (req, res) => {
+    // fetch and delete budget entry
+    await budget.findByIdAndDelete(req.params.id);
+    // send scuccess response
+    res.status(204).send();
+});
+
 // export router 
+module.exports = router;
