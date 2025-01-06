@@ -7,19 +7,19 @@ const budgetSchema = new mongoose.Schema({
         ref: 'User',
         required: true
     },
-    aount: {
+    amount: {
         type: Number,
         required: true
     },
     category: {
-        tyep: String
+        type: String
     },
     date: {
         type: Date,
         default: Date.now
     },
     description: {
-        tyep: String
+        type: String
     }
 });
 // export budget model
