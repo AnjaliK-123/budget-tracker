@@ -8,9 +8,17 @@ const mongoose = require('mongoose');
 const cors = require('cors');
 // instance of express 
 const app = express(); 
+// import auth routes 
+const authRoutes = require('./routes/auth');
+// import budget rotues 
+const budgetRoutes = require('./routes/budget');
 // instance of middleware 
 app.use(cors());
 app.use(express.json());
+// use authentication routes
+app.use('/api/auth', authRoutes);
+// use budget routes
+app.use('/api/budget', budgetRoutes);
 // database connection 
 mongoose.connect(
     process.env.MONGODB_URI, {
