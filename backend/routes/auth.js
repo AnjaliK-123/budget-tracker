@@ -15,14 +15,16 @@ router.post('/register', async (req, res) => {
     // get username and password of user
     const { username, password } = req.body;
     // hashes the password
-    const hassedPassowrd = await bcryptjs.hash(password, 10);
+    const hashedPassword = await bcrypt.hash(password, 10);
+    const newUser = new user({ username, password: hashedPassword });
+
+    try {
+        await newUser.save();
+        res.status(201).send("User registered successfully.");
+    } catch (error) {
+        res.status(400).send("Error registering user.");
+    }
 });
-// create a new instance of user model
-const newUser = new user({ username, password: hassedPassowrd });
-// save the new user
-await newUser.save();
-// send response for succesful registration
-res.status(201).send('User registered sucessfully');
 
 //login user
 // using post route for login
