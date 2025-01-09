@@ -17,7 +17,7 @@ const authenticateToken = (res, req, next) => {
         return res.sendStatus(401);
     }
     // verify token
-    jwt.verify(token, proces.env.JWT_SECRET, (err, user) => {
+    jwt.verify(token, process.env.JWT_SECRET, (err, user) => {
         if (err) {
             // forbidden
             return res.sendStatus(403);
@@ -30,11 +30,11 @@ const authenticateToken = (res, req, next) => {
 }
 
 // Add Budget Entry
-rotuer.post('/', authenticateToken, async (req, res) => {
+router.post('/', authenticateToken, async (req, res) => {
     // get budget details
     const { amount, category, description } = req.body;
     // create instance of budget model
-    const newEntry = new budegt({
+    const newEntry = new budget({
         userId: req.user.id,
         amount,
         category,
@@ -45,16 +45,17 @@ rotuer.post('/', authenticateToken, async (req, res) => {
     // send response with new entry
     res.status(201).json(newEntry);
 }
-    );
+);
+
 // Get Budget Entries
 router.get('/', authenticateToken, async (req, res) => {
-    // retirieves all budegt entries for authenticated user
+    // retirieves all budget entries for authenticated user
     const entries = await budget.find({ userId: req.user.id });
     // send respense in json format
     res.json(entries);
 });
 // Delete Budget Entry
-rotuer.delete('/:id', authenticateToken, async (req, res) => {
+router.delete('/:id', authenticateToken, async (req, res) => {
     // fetch and delete budget entry
     await budget.findByIdAndDelete(req.params.id);
     // send scuccess response
