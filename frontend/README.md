@@ -1,70 +1,110 @@
-# Getting Started with Create React App
+# Budget Tracker
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A web application that helps users manage their finances by tracking income and expenses. Users can add, edit, and delete budget entries, categorize their expenses, and view summaries to better understand their spending habits.
 
-## Available Scripts
+## Features
 
-In the project directory, you can run:
+- User authentication (register and login)
+- Add, edit, and delete budget entries
+- Categorize expenses (e.g., food, transport, entertainment)
+- View monthly and yearly summaries
+- Responsive design for mobile and desktop
+- Secure user data storage
 
-### `npm start`
+## Technologies Used
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+- **Frontend**:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+  - React
+  - React Router
+  - Axios for API calls
+  - CSS (or Bootstrap/Tailwind for styling)
 
-### `npm test`
+- **Backend**:
+  - Node.js
+  - Express.js
+  - MongoDB (with Mongoose for object modeling)
+  - JSON Web Tokens (JWT) for authentication
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Getting Started
 
-### `npm run build`
+### Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Node.js (version 14 or higher)
+- MongoDB (for local development) or a MongoDB Atlas account (for cloud database)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### Installation
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+1. Clone the repository:
 
-### `npm run eject`
+   ```bash
+   git clone https://github.com/AnjaliK-123/budget-tracker.git
+   ```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+2. Navigate to the project directory:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   ```bash
+   cd budget-tracker
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+3. Set up the backend:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+   - Navigate to the backend directory:
 
-## Learn More
+     ```bash
+     cd backend
+     ```
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+   - Install dependencies:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+     ```bash
+     npm install
+     ```
 
-### Code Splitting
+   - Create a `.env` file in the backend directory and add your MongoDB connection string:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+     ```
+     MONGODB_URI=your_mongodb_connection_string
+     ```
 
-### Analyzing the Bundle Size
+   - Start the server:
+     ```bash
+     node server.js
+     ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+4. Set up the frontend:
 
-### Making a Progressive Web App
+   - Navigate to the frontend directory:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+     ```bash
+     cd ../frontend
+     ```
 
-### Advanced Configuration
+   - Install dependencies:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+     ```bash
+     npm install
+     ```
 
-### Deployment
+   - Start the React application:
+     ```bash
+     npm start
+     ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+### Usage
 
-### `npm run build` fails to minify
+- Register a new account or log in with existing credentials.
+- Add your income and expenses, categorizing them as needed.
+- View your budget summary to track your financial health.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+### Contributing
+
+1. Fork the project
+2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
+3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
+4. Push to the branch (`git push origin feature/AmazingFeature`)
+5. Open a Pull Request
+
+### License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
