@@ -1,10 +1,7 @@
 import React from 'react';
-import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Registration from './pages/registration';
-
-// import Login from './pages/login';
-// import Budget from './pages/budget';
-// import Home from './pages/home';
+import logo from './logo.svg';
 import './App.css';
 
 function App() {
