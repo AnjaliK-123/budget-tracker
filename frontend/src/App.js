@@ -12,9 +12,9 @@ function App() {
     <Router>
       <Routes>
         <Route path="/register" element={<Registration/>} />
-        {/* <Route path="/login" component={Login} />
+         {/* <Route path="/login" component={Login} /> */}
         <Route path="/budget" component={Budget} />
-        <Route path="/" component={Home} />  */}
+        {/* <Route path="/" component={Home} />   */}
       </Routes>
    </Router>
   );
