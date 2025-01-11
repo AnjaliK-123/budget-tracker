@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 const BudgetEntry = () => {
     // state variables
@@ -22,3 +22,5 @@ const BudgetEntry = () => {
         </div>
     );
 }
+
+export default BudgetEntry;
