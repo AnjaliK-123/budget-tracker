@@ -8,9 +8,10 @@ const router = express.Router();
 const budget = require('../models/budgetEntry');
 
 // Middleware to authenticate token
-const authenticateToken = (res, req, next) => {
+const authenticateToken = (req, res, next) => {
     //get auth header value
     const token = req.headers['authorization']?.split(' ')[1];
+    console.log(req.headers);
     // if token invalid
     if (!token) {
         // uauthorized
@@ -40,12 +41,17 @@ router.post('/', authenticateToken, async (req, res) => {
         category,
         description
     });
-    // save entry
-    await newEntry.save();
-    // send response with new entry
-    res.status(201).json(newEntry);
-}
-);
+    try {
+        // save entry
+        await newEntry.save();
+        // send response with new entry
+        res.status(201).json(newEntry);
+    } catch (error) {
+        //send error response
+        console.error('Error adding budget entry', error);
+        res.status(400).send('Error adding budget entry');
+    }
+});
 
 // Get Budget Entries
 router.get('/', authenticateToken, async (req, res) => {

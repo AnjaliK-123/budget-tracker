@@ -14,10 +14,10 @@ const BudgetEntry = () => {
     return (
         <div>
             <h2>Budget Entry</h2>
-            <form>
+            <form onSubmit={handleSubmit}>
                 <input type="text" placeholder="Amount" value={amount} onChange={(e) => setAmount(e.target.value)}  required/>
                 <input type="text" placeholder="Category" value={category} onChange={(e) => setCategory(e.target.value)} required />
-                <button type="submit" onclick={handleSubmit}>Add Entry</button>
+                <button type="submit">Add Entry</button>
             </form>       
         </div>
     );
