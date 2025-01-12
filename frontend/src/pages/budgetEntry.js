@@ -38,7 +38,10 @@ const BudgetEntry = () => {
                 <input type="text" placeholder="Category" value={category} onChange={(e) => setCategory(e.target.value)} required />
                 <input type="text" placeholder="Description" value={description} onChange={(e) => setDescription(e.target.value)} required />
                 <button type="submit">Add Entry</button>
-            </form>       
+            </form>  
+              {/* display error and success message */}
+              {error && <p className="error">{error}</p>}
+            {success && <p className="success">{success}</p>}
         </div>
     );
 }
